@@ -1,0 +1,38 @@
+body {
+	border: 20px solid #bdc3c7;
+	padding: 20px;
+	max-width:700px;  /* Max-width value keeps the body displayed at 700px until it needs to shrink */
+	width:80%;
+	margin:20px auto; /* 20px is for top and auto is for right, left and bottom margins. */ 
+	font-family: Source Sans Pro;
+}
+
+.qoute {
+	border-left: 5px solid  #bdc3c7;
+	padding-left: 5px;
+}
+
+.date {
+	color: #3498db;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+}
+
+.post {
+	margin-bottom: 20px;
+}
+
+h2 {
+	color: #2c3e50;
+	font-size: 2.0rem;
+}
+
+
+hr { 
+	border: 0; 
+	height: 0; 
+	border-top: 1px solid rgba(0, 0, 0, 0.1); 
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+	width:95%;
+}
+
