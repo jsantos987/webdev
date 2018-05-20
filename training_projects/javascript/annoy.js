@@ -17,3 +17,11 @@ while(answer.indexOf("yes") === -1) {
 }
 
 alert("YAY, WE MADE IT!")
+
+
+
+
+
+
+
+
