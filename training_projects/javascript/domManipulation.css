@@ -1,0 +1,10 @@
+.eBorder {
+	color: blue;
+	border: 10px solid red;
+}
+
+
+.eBig {
+	color: purple;
+	font-size: 76px;
+}
