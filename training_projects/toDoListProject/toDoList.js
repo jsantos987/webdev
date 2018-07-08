@@ -1,5 +1,3 @@
-
-
 /*
 // Check off specific todos by clicking
 $("li").click(function(){
@@ -20,12 +18,19 @@ $("li").click(function(){
 	}
 
 });
-
 */
 
 // All the above refactored by creasting COMPLETED class and adding one line.
-
 // Check off Specific Todos By Clicking
 $("li").click(function(){
 	$(this).toggleClass("completed");
+});
+
+
+// Click on X to delete ToDO
+$("span").click(function(event){
+	$(this).parent().fadeOut(500,function(){
+		$(this).remove();
+	});
+	event.stopPropagation();
 });
