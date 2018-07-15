@@ -3,10 +3,19 @@
 <head>
 	<title>Circles Sound</title>
 	<script type="text/javascript" src="paper-full.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.14/howler.js"></script>
 	<link rel="stylesheet" type="text/css" href="circles.css">
 	
 	<script type="text/paperscript" canvas="myCanvas">
 	
+	var sound1 = new Howl({
+		src: ['sounds/bubbles.mp3']
+	});
+
+	var sound2 = new Howl({
+		src: ['sounds/clay.mp3']
+	});
+
 	var circles = [];
 
 	function onKeyDown(event) {
@@ -15,9 +24,21 @@
 		var point = maxPoint * randomPoint;
 		// When a key is pressed, set the content of the text item:
 		var newCircle = new Path.Circle(point, 500)
-		newCircle.fillColor = "orange";
-		circles.push(newCircle);
-	}
+		// if key is "a" play sound 1
+		if(event.key === "a"){
+			sound1.play();
+			newCircle.fillColor = "purple"
+		}
+		// if key is "s" play sound 2
+		else if(event.key === "s"){
+				sound2.play();
+				newCircle.fillColor = "#16a085"
+			} else {
+				newCircle.fillColor = "orange";
+			}
+
+			circles.push(newCircle);
+		}
 	
 /*	// THIS CODE LOADS A CIRCLE ON PAGE LOAD
 	var animatedCircle = new Path.Circle(new Point(300,300), 100);
@@ -30,7 +51,6 @@
 			circles[i].scale(.9);
 		}
 	}
-
 	</script>
 
 </head>
