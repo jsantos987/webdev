@@ -37,7 +37,20 @@ UIguessBtn.addEventListener('click', function(){
         setMessage(`Please enter a number between ${min} and ${max}`, 'red');
     }
 
+// Check if is the winning number
+if(guess === winningNum){
+    //Disable input
+    UIguessInput.disabled = true;
+    // Change border color
+    UIguessInput.style.borderColor = 'green';
+    // Set Message
+    setMessage(`${winningNum} is correct, YOU WIN!`, 'green');
+
+} else {
+
+}
 });
+
 // Set Message
 function setMessage(msg, color){
     UImessage.style.color = color;
