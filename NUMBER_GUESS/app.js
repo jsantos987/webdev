@@ -14,21 +14,21 @@ let min = 1,
     guessesLeft = 3;
 
 // UI Elements
-const UIgame = document.querySelector('#game'),
-      UIminNum = document.querySelector('.min-num'),
-      UImaxNum = document.querySelector('.max-num'),
-      UIguessBtn = document.querySelector('#guess-btn'),
-      UIguessInput = document.querySelector('#guess-input'),
-      UImessage = document.querySelector('.message');
+const game = document.querySelector('#game'),
+      minNum = document.querySelector('.min-num'),
+      maxNum = document.querySelector('.max-num'),
+      guessBtn = document.querySelector('#guess-btn'),
+      guessInput = document.querySelector('#guess-input'),
+      message = document.querySelector('.message');
 
 
 // Assign UI min and max
-UIminNum.textContent = min;
-UImaxNum.textContent = max;
+minNum.textContent = min;
+maxNum.textContent = max;
 
 // Listen for guess
-UIguessBtn.addEventListener('click', function(){
-    let guess = parseInt(UIguessInput.value);
+guessBtn.addEventListener('click', function(){
+    let guess = parseInt(guessInput.value);
     //console.log(guess);
 
     // Validate
@@ -37,22 +37,46 @@ UIguessBtn.addEventListener('click', function(){
         setMessage(`Please enter a number between ${min} and ${max}`, 'red');
     }
 
-// Check if is the winning number
+// Check if guess is the winning number
 if(guess === winningNum){
+    // Game over - won
     //Disable input
-    UIguessInput.disabled = true;
+    guessInput.disabled = true;
     // Change border color
-    UIguessInput.style.borderColor = 'green';
+    guessInput.style.borderColor = 'green';
     // Set Message
     setMessage(`${winningNum} is correct, YOU WIN!`, 'green');
 
 } else {
+    // Wrong number - subtract one turn from guesses left
+    guessesLeft -= 1;
+
+    if(guessesLeft === 0){
+        // game over - lost
+        
+        //Disable input
+    guessInput.disabled = true;
+    // Change border color
+    guessInput.style.borderColor = 'red';
+    // Set Message
+    setMessage(`Game Over, you lost. The correct number was ${winningNum}`, 'red');
+    } else {
+
+        // Change border color
+        guessInput.style.borderColor = 'red';
+
+        // Clear the input
+        guessInput.value = '';
+
+        // Tell user its the wrong number
+        setMessage(`${guess} is not correct, ${guessesLeft} guesses left`, 'red');
+    }
 
 }
 });
 
 // Set Message
 function setMessage(msg, color){
-    UImessage.style.color = color;
-    UImessage.textContent = msg;
+    message.style.color = color;
+    message.textContent = msg;
 }
