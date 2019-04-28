@@ -1,10 +1,13 @@
 //DB info Collection Constructor
-function DBinfo(account, server, instance, dataCenter) {
+function DBinfo(account, server, instance, dataCenter, passWD) {
     this.account = account;
     this.server = server;
     this.instance = instance;
     this.dataCenter = dataCenter;
+    this.passWD = passWD;
 }
+
+
 
 // UI Constructor
 function UI() {}
@@ -23,8 +26,8 @@ UI.prototype.constructDBUser = function(dbINFO){
         <p>This is a test ${dbINFO.account}-${dbINFO.server}<br />
         This is database ${dbINFO.instance}<br />
         This is a test ${dbINFO.account}-${dbINFO.server}<br />
-        This is the rman catalog ${dbINFO.dataCenter}</p>
-     
+        This is the rman catalog ${dbINFO.dataCenter} and ${dbINFO.passWD}</p>
+            
         <strong>Catalog User Creation Script</strong>
         <p>This is a test ${dbINFO.account}-${dbINFO.server}<br />
         This is database ${dbINFO.instance}<br />
@@ -91,16 +94,19 @@ function(e){
     const account = document.getElementById('account').value,
           server = document.getElementById('server').value,
           instance = document.getElementById('instance').value,
-          dataCenter = document.getElementById('dataCenter').value
-    // console.log(account, server, instance);
+          dataCenter = document.getElementById('dataCenter').value,
+          passWD = document.getElementById('passWD').innerHTML = password.value;
+     
+    //////////// Place holder - Need to add password generator ///////////
 
 
-    
-    // Instantiate DB info
-    const dbINFO = new DBinfo(account, server, instance, dataCenter);
-   // console.log(dbINFO);
 
 
+    //////////// Place holder - Need to add Oracle version selector and Constructor for ////////////
+
+        // Instantiate DB info
+    const dbINFO = new DBinfo(account, server, instance, dataCenter, passWD);
+   
 
     // Instantiate UI
     const ui = new UI();
