@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></script>
+    <style>
+        .success, .error {
+            color: white;
+            padding: 5px;
+            margin: 5px 0 15px 0;
+        }
+        .success {
+            background: green;            
+        }
+        .error {
+            background: red;
+        }
+        
+        .br {
+        line-height: 10%;
+        }
+    
+    </style>
+
+    <title>Oracle Script Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Oracle Script Generator</h1>
+        <form id="db-form">
+            <div>
+                <lable for="account">Account</lable>
+                <input type="text" id="account" class="u-full-width">
+            </div>
+            <div>
+                <lable for="server">Server</lable>
+                <input type="text" id="server" class="u-full-width">
+            </div>
+            <div>
+                <lable for="instance">Instance</lable>
+                <input type="text" id="instance" class="u-full-width">
+            </div>
+            <div>
+                <lable for=dataCenter>Data Center</lable>
+                <select name="dataCenter" id="dataCenter" class="u-full-width">
+                    <option value="Select_DC">Select DC</option>
+                    <option value="RMDFW">DFW</option>
+                    <option value="RMORD">ORD</option>
+                    <option value="RMIAD">IAD</option>
+                    <option value="RMLON3">LON3</option>
+                    <option value="RMSYD">SYD</option>
+                </select>
+            </div>
+
+            <br />
+
+            <div>
+                <input type="submit" value="Submit" class="u-full-width">
+            </div>
+
+        </form>
+        <table class="u-full-width">
+            <thread>
+               
+                    <th>Oracle User Creation Script and Connection Strings</th>
+                    <tr></tr>
+
+            </thread>
+            <tbody id="backupUser"></tbody>
+            <tr></tr>
+
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+    <script type="text/javascript" src="passwd_working.js"></script>
+</body>
+</html>
