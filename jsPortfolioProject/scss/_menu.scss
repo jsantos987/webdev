@@ -68,7 +68,7 @@
     background: $primary-color;
     //background: darken($primary-color, 5);
     list-style: none;
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(0, -100%, 0);
     @include easeOut;
 
     &.show {
@@ -82,7 +82,7 @@
     //background: $primary-color;
     background: darken($primary-color, 7);
 
-    transform: translate3d(-100%, 0, 0);
+    transform: translate3d(0, 100%, 0);
     @include easeOut;
 
     &.show {
@@ -93,7 +93,7 @@
     .portrait {
       width: 450px;
       height: 450px;
-      background: url("https://avatars1.githubusercontent.com/u/15621282?s=460&v=4");
+      background: url("https://pbs.twimg.com/profile_images/2929035220/a20fc9f2f4b7021674884296891f3332_400x400.jpeg");
       border-radius: 50%;
       border: solid 3px $secondary-color;
       //transform: translate3d(0, 0, -200%);
