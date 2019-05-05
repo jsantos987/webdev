@@ -11,7 +11,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #fff; //set-text-color($primary-color);
+    background: set-text-color($primary-color);
     @include easeOut;
   }
 
@@ -43,7 +43,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
+  // opacity: 1;
   visibility: hidden;
 
   &.show {
@@ -52,6 +52,7 @@
 
   &-branding,
   &-nav {
+    opacity: 0.95;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -63,6 +64,7 @@
   }
 
   &-nav {
+    //opacity: 0.97;
     margin: 0;
     padding: 0;
     background: $primary-color;
@@ -82,7 +84,7 @@
     //background: $primary-color;
     background: darken($primary-color, 7);
 
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(-100%, 0, 0);
     @include easeOut;
 
     &.show {
@@ -91,8 +93,8 @@
     }
 
     .portrait {
-      width: 450px;
-      height: 450px;
+      width: 400px;
+      height: 400px;
       background: url("https://pbs.twimg.com/profile_images/2929035220/a20fc9f2f4b7021674884296891f3332_400x400.jpeg");
       border-radius: 50%;
       border: solid 3px $secondary-color;

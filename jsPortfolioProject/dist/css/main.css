@@ -9,7 +9,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #fff;
+    background: #feffff;
     transition: all 0.7s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
@@ -24,11 +24,11 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
   visibility: hidden; }
   .menu.show {
     visibility: visible; }
   .menu-branding, .menu-nav {
+    opacity: 0.95;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -42,7 +42,7 @@
     padding: 0;
     background: #17252a;
     list-style: none;
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(0, -100%, 0);
     transition: all 0.7s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
@@ -53,9 +53,9 @@
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
-      width: 450px;
-      height: 450px;
-      background: url("https://avatars1.githubusercontent.com/u/15621282?s=460&v=4");
+      width: 400px;
+      height: 400px;
+      background: url("https://pbs.twimg.com/profile_images/2929035220/a20fc9f2f4b7021674884296891f3332_400x400.jpeg");
       border-radius: 50%;
       border: solid 3px #3aafa9; }
   .menu .nav-item {
@@ -72,7 +72,7 @@
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: 300;
-    color: set-text-color(#17252a);
+    color: #feffff;
     text-decoration: none;
     transition: all 0.7s ease-out; }
     .menu .nav-link:hover {
@@ -95,7 +95,7 @@
 
 body {
   background: #17252a;
-  color: #def2f1;
+  color: #feffff;
   height: 100%;
   margin: 0;
   font-family: "Segeo UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -131,7 +131,7 @@ h3 {
     background: rgba(27, 43, 49, 0.5); }
 
 a {
-  color: #fff;
+  color: #feffff;
   text-decoration: none; }
 
 header {
@@ -144,7 +144,6 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
   min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 1rem; }
@@ -157,3 +156,76 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr); }
+
+.bio-image {
+  grid-area: bioimage;
+  margin: 30px;
+  border-radius: 50%;
+  border: #3aafa9 3px solid;
+  width: 250px;
+  height: 250px; }
+
+.bio {
+  grid-area: bio;
+  font-size: 1.5rem; }
+
+.job-1 {
+  grid-area: job1; }
+
+.job-2 {
+  grid-area: job2; }
+
+.job-3 {
+  grid-area: job3; }
+
+.job {
+  background: #20343a;
+  padding: 0.5rem;
+  border-bottom: #3aafa9 5px solid; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #050809;
+  color: #feffff;
+  height: 60px; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .men-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 10vh; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("https://a.wattpad.com/useravatar/Three_toed_sloth.256.593696.jpg");
+      width: 150px;
+      height: 150px; }
+  .about-info {
+    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }

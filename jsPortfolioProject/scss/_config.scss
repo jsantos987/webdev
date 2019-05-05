@@ -31,6 +31,15 @@ $background-opacity: 0.9;
   }
 }
 
+// Set text color (Applied when background color is changed)
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #feffff; //fff;
+  }
+}
+
 // Media Qery Mixins
 // Only applied when 500px or less is displayed
 @mixin mediaSm {
