@@ -55,7 +55,8 @@
     .menu-branding .portrait {
       width: 400px;
       height: 400px;
-      background: url("https://pbs.twimg.com/profile_images/2929035220/a20fc9f2f4b7021674884296891f3332_400x400.jpeg");
+      background: url("../img/jsantos22.png");
+      background-position: center;
       border-radius: 50%;
       border: solid 3px #3aafa9; }
   .menu .nav-item {
@@ -139,8 +140,7 @@ header {
   z-index: 2;
   width: 100%; }
 
-.text-secondary {
-  color: #3aafa9; }
+
 
 main {
   padding: 4rem;
@@ -157,6 +157,15 @@ main {
     main#home h1 {
       margin-top: 20vh; }
 
+.text-secondary {
+        color: #3aafa9;
+      }
+  
+#secondary-color {
+        color: #FFFF99;
+      }
+
+
 .about-info {
   display: grid;
   grid-gap: 30px;
@@ -165,15 +174,25 @@ main {
 
 .bio-image {
   grid-area: bioimage;
-  margin: 30px;
-  border-radius: 50%;
+  margin: 60px;
+  border-radius: 200%;
   border: #3aafa9 3px solid;
-  width: 250px;
-  height: 250px; }
+  width: 240px;
+  height: 240px; }
 
-.bio {
-  grid-area: bio;
-  font-size: 1.5rem; }
+.bio-div {
+  padding: 0.5rem;
+  background: #20343a;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  
+  .text-bio {
+      font-family:  Arial, sans-serif;
+      font-size: 1.5rem;
+    }
 
 .job-1 {
   grid-area: job1; }
@@ -188,6 +207,7 @@ main {
   background: #20343a;
   padding: 0.5rem;
   border-bottom: #3aafa9 5px solid; }
+
 
 #main-footer {
   text-align: center;
